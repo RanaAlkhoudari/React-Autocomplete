@@ -1,0 +1,205 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  min-height: 87vh;
+}
+
+.not-found {
+  color: rgb(223, 147, 223);
+  padding: 8px;
+}
+
+.list {
+  border: 1px solid rgb(223, 147, 223);
+  list-style: none;
+  max-height: 340px;
+  overflow-y: scroll;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.list li {
+  padding: 8px;
+}
+
+.active,
+.list li:hover,
+a:hover {
+  background-color: rgb(223, 147, 223);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.background {
+  background-image: url("https://cdn.pixabay.com/photo/2017/03/31/17/39/avatar-2191918__340.png");
+  height: 760px;
+  background-size: 100% 100%;
+  background-position: bottom;
+}
+
+.select {
+  width: 30%;
+  color: rgb(223, 147, 223);
+  margin: 20px auto 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: right;
+  list-style: none;
+  background-color: rgb(223, 147, 223);
+  padding: 10px;
+  font-size: large;
+}
+
+nav ul li {
+  color: white;
+  padding: 0 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  border: 1px solid rgb(223, 147, 223);
+  padding: 5px;
+  width: 30%;
+  margin-top: 20px;
+}
+
+.input {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  width: 30%;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid transparent;
+  box-shadow: 5px 5px 9px #a3a2a2;
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(223, 147, 223);
+}
+
+h3,
+p {
+  color: rgb(223, 147, 223);
+  font-size: 20px;
+}
+
+h2 {
+  color: rgb(223, 147, 223);
+  text-align: center;
+  margin: 20px 0;
+}
+
+.error {
+  color: rgb(223, 147, 223);
+  text-align: center;
+  margin: 20px 0;
+  font-size: 40px;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+button {
+  color: white;
+  background-color: rgb(223, 147, 223);
+  border: none;
+  padding: 10px;
+  font-size: large;
+  width: 150px;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  background-color: rgb(223, 147, 223);
+  color: white;
+  margin: 0px;
+}
+
+.client_detail {
+  width: 60%;
+  font-size: 10px;
+}
+
+.client_detail p,
+.client_detail h3 {
+  font-size: 30px;
+  padding: 20px;
+}
+
+@media (max-width: 599px) {
+  input {
+    width: 90%;
+  }
+  .list,
+  .select {
+    width: 90%;
+  }
+
+  .background {
+    height: 710px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .footer {
+    font-size: 15px;
+  }
+
+  nav ul {
+    justify-content: space-around;
+  }
+  .wrapper {
+    width: 90%;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .list,
+  .select,
+  input {
+    width: 75%;
+  }
+
+  .background {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 685px;
+  }
+
+  nav ul {
+    justify-content: space-around;
+  }
+
+  .wrapper {
+    width: 47%;
+  }
+
+  .client-detail {
+    width: 70%;
+  }
+}
