@@ -9,7 +9,6 @@ function SearchName() {
   const [active, setActive] = useState(0);
   const [allClients, setAllClients] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const [isShow, setIsShow] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -31,15 +30,12 @@ function SearchName() {
     });
     setActive(0);
     setFiltered(suggestions);
-    setIsShow(true);
     setValue(e.currentTarget.value);
   }
 
   function onKeyDown(e) {
     //Enter key
-    if (e.keyCode === 13) {
-      setActive(0);
-      setIsShow(false);
+    if (e.keyCode === 13 && filtered[active] !== undefined) {
       const newValue = `${filtered[active].first_name} ${filtered[active].last_name}`;
       setValue(newValue);
       history.push(`/detail/${filtered[active].id.$oid}`);
@@ -53,7 +49,7 @@ function SearchName() {
   }
 
   function renderAutocomplete() {
-    if (isShow && value) {
+    if (value) {
       if (filtered.length) {
         return (
           <ul className="list">

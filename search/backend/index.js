@@ -31,11 +31,11 @@ app.get("/clients/:id", (req, res) => {
 });
 
 app.get("/origin/:origin", (req, res) => {
-  const clientToGet = clients.filter((client) => {
+  const clientsToGet = clients.filter((client) => {
     return client.origin === req.params.origin;
   });
   res.status(200);
-  res.send(clientToGet);
+  res.send(clientsToGet);
 });
 
 app.listen(port, () => console.log(`Server running on port: ${port}`));

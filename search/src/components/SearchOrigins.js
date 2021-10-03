@@ -9,7 +9,6 @@ function SearchOrigins() {
   const [allClients, setAllClients] = useState([]);
   const [active, setActive] = useState(0);
   const [filtered, setFiltered] = useState([]);
-  const [isShow, setIsShow] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -34,15 +33,12 @@ function SearchOrigins() {
 
     setActive(0);
     setFiltered(filteredOrigin);
-    setIsShow(true);
     setValue(e.currentTarget.value);
   }
 
   function onKeyDown(e) {
     //Enter key
-    if (e.keyCode === 13) {
-      setActive(0);
-      setIsShow(false);
+    if (e.keyCode === 13 && filtered[active] !== undefined) {
       setValue(filtered[active]);
       history.push(`/origin/${filtered[active]}`);
       //Up arrow key
@@ -55,7 +51,7 @@ function SearchOrigins() {
   }
 
   function renderAutocomplete() {
-    if (isShow && value) {
+    if (value) {
       if (filtered.length) {
         return (
           <ul className="list">
