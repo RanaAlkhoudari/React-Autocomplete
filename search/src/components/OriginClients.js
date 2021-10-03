@@ -26,25 +26,32 @@ function OriginClients() {
   }
   return (
     <>
-      <h2>All the clients from {origin}</h2>
-      <div className="container">
-        {clients.map((client, index) => {
-          return (
-            <div key={index} className="wrapper">
-              <img src={client.photo} alt="" />
-              <h3>
-                Name: {client.first_name} {client.last_name}
-              </h3>
-              <p> Email: {client.email}</p>
-              <p> Gender: {client.gender}</p>
-              <p>Origin: {client.origin}</p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="button-wrapper">
-        <button onClick={goBack}>Go Back</button>
-      </div>
+      {clients.length !== 0 ? (
+        <>
+          {" "}
+          <h2>All clients who are from {origin}:</h2>
+          <div className="container">
+            {clients.map((client, index) => {
+              return (
+                <div key={index} className="wrapper">
+                  <img src={client.photo} alt="" />
+                  <h3>
+                    Name: {client.first_name} {client.last_name}
+                  </h3>
+                  <p> Email: {client.email}</p>
+                  <p> Gender: {client.gender}</p>
+                  <p>Origin: {client.origin}</p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="button-wrapper">
+            <button onClick={goBack}>Go Back</button>
+          </div>
+        </>
+      ) : (
+        <h2>Clients from {origin} Not Found</h2>
+      )}
     </>
   );
 }

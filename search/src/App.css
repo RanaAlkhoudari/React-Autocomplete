@@ -47,13 +47,21 @@ a:hover {
   margin: 20px auto 0;
 }
 
+nav div {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(223, 147, 223);
+}
+
 nav ul {
   display: flex;
-  justify-content: right;
   list-style: none;
-  background-color: rgb(223, 147, 223);
   padding: 10px;
   font-size: large;
+}
+
+.right-side {
+  justify-content: right;
 }
 
 nav ul li {
@@ -162,6 +170,11 @@ button {
     width: 90%;
   }
 
+  nav ul li {
+    padding: 0 8px;
+    font-size: 17px;
+  }
+
   .background {
     height: 710px;
     background-size: contain;
@@ -191,8 +204,8 @@ button {
     height: 685px;
   }
 
-  nav ul {
-    justify-content: space-around;
+  nav ul li {
+    padding: 0 30px;
   }
 
   .wrapper {

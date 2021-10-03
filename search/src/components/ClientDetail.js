@@ -24,28 +24,34 @@ function ClientDetail() {
   }
   return (
     <>
-      <h2>
-        More details about {client.first_name} {client.last_name}
-      </h2>
-
-      <div className="container">
-        <div className="wrapper client-detail">
-          <img src={client.photo} alt="" />
-          <h3>
-            Name: {client.first_name} {client.last_name}
-          </h3>
-          <p> Email: {client.email}</p>
-          <p> Gender: {client.gender}</p>
-          {client.origin === null ? (
-            <p>No origin found</p>
-          ) : (
-            <p>Origin: {client.origin}</p>
-          )}
-        </div>
-      </div>
-      <div className="button-wrapper">
-        <button onClick={goBack}>Go Back</button>
-      </div>
+      {client.length !== 0 ? (
+        <>
+          {" "}
+          <h2>
+            Details about {client.first_name} {client.last_name}:
+          </h2>
+          <div className="container">
+            <div className="wrapper client-detail">
+              <img src={client.photo} alt="" />
+              <h3>
+                Name: {client.first_name} {client.last_name}
+              </h3>
+              <p> Email: {client.email}</p>
+              <p> Gender: {client.gender}</p>
+              {client.origin === null ? (
+                <p>No origin found</p>
+              ) : (
+                <p>Origin: {client.origin}</p>
+              )}
+            </div>
+          </div>
+          <div className="button-wrapper">
+            <button onClick={goBack}>Go Back</button>
+          </div>
+        </>
+      ) : (
+        <h2>Client Not Found</h2>
+      )}
     </>
   );
 }
