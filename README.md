@@ -15,3 +15,4 @@ A user would want to search for the first + last name and/or the country of orig
 
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/63319487/136200534-7daf1d55-52e8-4f02-8473-d5b778655363.gif)
+
